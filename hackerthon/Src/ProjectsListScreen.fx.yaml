@@ -1,0 +1,131 @@
+ProjectsListScreen As screen:
+    BackgroundImage: =Background
+
+    Rectangle1_2 As rectangle:
+        Fill: =RGBA(100, 0, 50, 1)
+        Height: =80
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        Size: =20
+        Text: ="Projects Dashboard"
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Icon1_2 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =80
+        Icon: =Icon.Home
+        OnSelect: =Navigate(MainScreen);
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =80
+        ZIndex: =3
+
+    Rectangle2_2 As rectangle:
+        Fill: =RGBA(255, 255, 255, 0.8)
+        Height: =587
+        Width: =Parent.Width
+        Y: =80
+        ZIndex: =4
+
+    Gallery2 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =547
+        Items: =Sort(Hack_ProjectDetails,ID,SortOrder.Descending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =41
+        Width: =1366
+        Y: =120
+        ZIndex: =5
+
+        Label4 As label:
+            OnSelect: =Select(Parent)
+            Text: =If(Len(ThisItem.ID)=1,"0000" & ThisItem.ID,Len(ThisItem.ID)=2,"000" & ThisItem.ID,Len(ThisItem.ID)=3,"00" & ThisItem.ID,Len(ThisItem.ID)=4,"0" & ThisItem.ID,ThisItem.ID)
+            Width: =lblID.Width
+            ZIndex: =1
+
+        Label5 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Title
+            Width: =lblTitle.Width
+            X: =Label4.X + Label4.Width
+            ZIndex: =2
+
+        Label6 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.ProjectManager.DisplayName
+            Width: =lblPM.Width
+            X: =Label5.X + Label5.Width
+            ZIndex: =3
+
+        Label7 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.DueDate
+            Width: =lblDueDate.Width
+            X: =Label6.X + Label6.Width
+            ZIndex: =4
+
+        Icon3 As icon.Edit:
+            Color: =RGBA(100, 0, 50, 1)
+            Height: =40
+            Icon: =Icon.Edit
+            OnSelect: =Set(varSelectedProject, ThisItem); Navigate(ProjectInfoScreen);
+            Width: =40
+            X: =Label7.X + Label7.Width
+            ZIndex: =5
+
+    Rectangle7 As rectangle:
+        Fill: =RGBA(100, 0, 50, 0.9)
+        Height: =50
+        Width: =Parent.Width
+        Y: =80
+        ZIndex: =6
+
+    lblPM As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Text: ="Project Manager"
+        Width: =250
+        X: =lblTitle.X + lblTitle.Width
+        Y: =80
+        ZIndex: =7
+
+    lblDueDate As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Text: ="Due Date"
+        X: =lblPM.X + lblPM.Width
+        Y: =80
+        ZIndex: =8
+
+    lblTitle As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Text: ="Project Name"
+        Width: =350
+        X: =lblID.X + lblID.Width
+        Y: =80
+        ZIndex: =9
+
+    lblID As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Text: |-
+            ="#Project ID"
+        Width: =250
+        Y: =80
+        ZIndex: =10
+
+    Icon5 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Add
+        OnSelect: =Navigate(ProjectRegistrationScreen)
+        X: =Parent.Width-Icon5.Width -10
+        ZIndex: =11
+

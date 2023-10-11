@@ -1,0 +1,35 @@
+{
+  "5a25c4b3-c94a-4ccb-923d-294873c4fdd4": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/henryorsborn/partial-builds/asev3migrations-with-resourceTemplate/1.0.1653.3414/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://absacorp.sharepoint.com/sites/UAT_ApprovalAutomation": {
+        "dataSources": {
+          "Hack_ProjectDetails": {
+            "tableName": "69d4aed0-6557-4361-ab6d-988ab34d0f73"
+          },
+          "Hack_TestersCases": {
+            "tableName": "bfc16e85-6f44-4b37-b8dd-e6de8d09064c"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Hack_ProjectDetails",
+      "Hack_TestersCases"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "5a25c4b3-c94a-4ccb-923d-294873c4fdd4"
+  }
+}
