@@ -50,7 +50,7 @@ SeniorApproverScreen As screen:
 
         Label8 As label:
             OnSelect: =Select(Parent)
-            Text: =ThisItem.ID
+            Text: =If(Len(ThisItem.ID) = 1,"0000" &ThisItem.ID, Len(ThisItem.ID) = 2,"000" & ThisItem.ID,ThisItem.ID)
             Width: =100
             ZIndex: =1
 

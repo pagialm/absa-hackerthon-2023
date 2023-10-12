@@ -180,6 +180,67 @@ TestCasesInfoScreen As screen:
                 Y: =DataCardKey23.Y
                 ZIndex: =4
 
+        Attestation_DataCard1 As typedDataCard.toggleEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Attestation"
+            Default: =ThisItem.Attestation
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Hack_TestersCases],DataSourceInfo.DisplayName,"Attestation")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue15.Value
+            Width: =683
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey15 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: ="I hereby confirm that all test cases assigned to me has been tested"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue15 As toggleSwitch:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                FalseText: ="No"
+                Tooltip: =Parent.DisplayName
+                TrueText: ="Yes"
+                X: =30
+                Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                ZIndex: =2
+
+            ErrorMessage15 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue15.Y + DataCardValue15.Height
+                ZIndex: =3
+
+            StarVisible15 As label:
+                Align: =Align.Center
+                Height: =DataCardKey15.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey15.Y
+                ZIndex: =4
+
         DataCard2 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -187,7 +248,7 @@ TestCasesInfoScreen As screen:
             Height: =200
             Width: =1366
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             Icon8 As icon.Cancel:
@@ -302,10 +363,10 @@ TestCasesInfoScreen As screen:
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["DisplayName","Email","Picture"]
                 DisplayMode: =Parent.DisplayMode
-                Items: =Choices([@Hack_TestersCases].Tester_x0021_)
+                Items: =Choices([@Hack_TestersCases].Tester1)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["DisplayName"]
-                SearchItems: =Choices(Hack_TestersCases.Tester_x0021_,DataCardValue14.SearchText)
+                SearchItems: =Choices(Hack_TestersCases.Tester1,DataCardValue14.SearchText)
                 SelectMultiple: =false
                 Template: =ListItemTemplate.Person
                 Tooltip: =Parent.DisplayName
