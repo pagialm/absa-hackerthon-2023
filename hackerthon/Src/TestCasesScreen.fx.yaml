@@ -235,6 +235,30 @@ TestCasesScreen As screen:
         Y: =Rectangle4.Y
         ZIndex: =21
 
+        DataCard1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =144
+            Width: =800
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            Icon6 As icon.Cancel:
+                Icon: =Icon.Cancel
+                OnSelect: =ResetForm(Form2); Set(showNewTest,false);
+                X: =Icon7.X - Icon6.Width - 50
+                Y: =55
+                ZIndex: =1
+
+            Icon7 As icon.Check:
+                Icon: =Icon.Check
+                OnSelect: =SubmitForm(Form2);
+                X: =Parent.Width - Icon7.Width -100
+                Y: =55
+                ZIndex: =2
+
         "'PassCriteria _DataCard1' As typedDataCard.numberEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="PassCriteria"
@@ -302,30 +326,6 @@ TestCasesScreen As screen:
                 Wrap: =false
                 Y: =DataCardKey13.Y
                 ZIndex: =4
-
-        DataCard1 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =144
-            Width: =800
-            X: =0
-            Y: =5
-            ZIndex: =1
-
-            Icon6 As icon.Cancel:
-                Icon: =Icon.Cancel
-                OnSelect: =ResetForm(Form2); Set(showNewTest,false);
-                X: =Icon7.X - Icon6.Width - 50
-                Y: =55
-                ZIndex: =1
-
-            Icon7 As icon.Check:
-                Icon: =Icon.Check
-                OnSelect: =SubmitForm(Form2);
-                X: =Parent.Width - Icon7.Width -100
-                Y: =55
-                ZIndex: =2
 
         Title_DataCard2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid

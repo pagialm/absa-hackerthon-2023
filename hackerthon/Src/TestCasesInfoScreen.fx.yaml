@@ -180,6 +180,30 @@ TestCasesInfoScreen As screen:
                 Y: =DataCardKey23.Y
                 ZIndex: =4
 
+        DataCard2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =200
+            Width: =1366
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            Icon8 As icon.Cancel:
+                Icon: =Icon.Cancel
+                OnSelect: =Back()
+                X: =Parent.Width - Icon8.Width*3
+                Y: =20
+                ZIndex: =1
+
+            Icon9 As icon.Check:
+                Icon: =Icon.Check
+                OnSelect: =SubmitForm(Form3);
+                X: =Icon8.X + Icon8.Width + 20
+                Y: =20
+                ZIndex: =2
+
         Attestation_DataCard1 As typedDataCard.toggleEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Attestation"
@@ -240,30 +264,6 @@ TestCasesInfoScreen As screen:
                 Wrap: =false
                 Y: =DataCardKey15.Y
                 ZIndex: =4
-
-        DataCard2 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =200
-            Width: =1366
-            X: =0
-            Y: =6
-            ZIndex: =1
-
-            Icon8 As icon.Cancel:
-                Icon: =Icon.Cancel
-                OnSelect: =Back()
-                X: =Parent.Width - Icon8.Width*3
-                Y: =20
-                ZIndex: =1
-
-            Icon9 As icon.Check:
-                Icon: =Icon.Check
-                OnSelect: =SubmitForm(Form3);
-                X: =Icon8.X + Icon8.Width + 20
-                Y: =20
-                ZIndex: =2
 
         Title_DataCard3 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
