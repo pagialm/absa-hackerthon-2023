@@ -59,6 +59,7 @@ MainScreen As screen:
     btnSeniorApprover As button:
         Fill: =RGBA(100, 0, 50, 0.9)
         Height: =80
+        OnSelect: =Navigate(SeniorApproverScreen)
         Text: ="Log in as Senior Approver"
         Width: =588
         X: =375

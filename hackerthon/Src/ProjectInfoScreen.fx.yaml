@@ -5,7 +5,7 @@ ProjectInfoScreen As screen:
         Fill: =RGBA(100, 0, 50, 1)
         Height: =80
         Width: =Parent.Width
-        ZIndex: =1
+        ZIndex: =2
 
     Label1_3 As label:
         Align: =Align.Center
@@ -15,30 +15,31 @@ ProjectInfoScreen As screen:
         Size: =20
         Text: ="Project Details"
         Width: =Parent.Width
-        ZIndex: =2
+        ZIndex: =3
 
     Icon1_3 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)
         Height: =80
         Icon: =Icon.Home
+        OnSelect: =Navigate(MainScreen);
         PaddingBottom: =5
         PaddingLeft: =5
         PaddingRight: =5
         PaddingTop: =5
         Width: =80
-        ZIndex: =3
+        ZIndex: =4
 
     Rectangle2_3 As rectangle:
         Fill: =RGBA(255, 255, 255, 0.8)
         Height: =587
         Width: =Parent.Width
         Y: =80
-        ZIndex: =4
+        ZIndex: =5
 
     Icon2_2 As icon.Add:
         Color: =RGBA(255, 255, 255, 1)
         Height: =80
-        Icon: =Icon.NextArrow
+        Icon: =Icon.Save
         OnSelect: =SubmitForm(Form1_1);
         PaddingLeft: =5
         PaddingTop: =5
@@ -71,7 +72,7 @@ ProjectInfoScreen As screen:
                 )
             );
             ResetForm(Form1_1);
-            Navigate(TestCasesScreen);
+            Navigate(ProjectsListScreen);
         Width: =Parent.Width
         Y: =80
         ZIndex: =7
@@ -86,7 +87,7 @@ ProjectInfoScreen As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue9_1.Text
-            Width: =683
+            Width: =1366
             X: =0
             Y: =1
             ZIndex: =1
@@ -283,15 +284,15 @@ ProjectInfoScreen As screen:
             BorderStyle: =BorderStyle.Solid
             DataField: ="NumberOfTestCases"
             Default: =ThisItem.NumberOfTestCases
-            DisplayMode: =Parent.DisplayMode
+            DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Hack_ProjectDetails],DataSourceInfo.DisplayName,"NumberOfTestCases")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
             Update: =Value(DataCardValue3_1.Text)
             Width: =683
-            X: =1
-            Y: =1
+            X: =0
+            Y: =2
             ZIndex: =5
 
             DataCardKey3_1 As label:
@@ -306,7 +307,7 @@ ProjectInfoScreen As screen:
 
             DataCardValue3_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =testCasesNo
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 Format: =TextFormat.Number
@@ -357,7 +358,7 @@ ProjectInfoScreen As screen:
             Required: =false
             Update: =Value(DataCardValue4_1.Text)
             Width: =683
-            X: =0
+            X: =1
             Y: =2
             ZIndex: =5
 
@@ -424,8 +425,8 @@ ProjectInfoScreen As screen:
             Required: =false
             Update: =DataCardValue6_1.Selected
             Width: =683
-            X: =1
-            Y: =2
+            X: =0
+            Y: =3
             ZIndex: =5
 
             DataCardKey6_1 As label:
@@ -491,7 +492,7 @@ ProjectInfoScreen As screen:
             Required: =false
             Update: =DataCardValue7_1.SelectedDate
             Width: =683
-            X: =0
+            X: =1
             Y: =3
             ZIndex: =5
 

@@ -21,6 +21,7 @@ ProjectRegistrationScreen As screen:
         Color: =RGBA(255, 255, 255, 1)
         Height: =80
         Icon: =Icon.Home
+        OnSelect: =Navigate(MainScreen)
         PaddingBottom: =5
         PaddingLeft: =5
         PaddingRight: =5

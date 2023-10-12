@@ -78,7 +78,13 @@ ProjectsListScreen As screen:
             Color: =RGBA(100, 0, 50, 1)
             Height: =40
             Icon: =Icon.Edit
-            OnSelect: =Set(varSelectedProject, ThisItem); Navigate(ProjectInfoScreen);
+            OnSelect: |
+                =Set(
+                    varSelectedProject,
+                    ThisItem
+                );
+                Set(testCasesNo,CountRows(Filter(Hack_TestersCases,ProjectID = varSelectedProject.ID)));
+                Navigate(ProjectInfoScreen);
             Width: =40
             X: =Label7.X + Label7.Width
             ZIndex: =5
